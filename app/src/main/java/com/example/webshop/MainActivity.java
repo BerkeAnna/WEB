@@ -31,4 +31,9 @@ public class MainActivity extends AppCompatActivity {
 
         Log.i(LOG_TAG, "Bejelentkezett: " + userName + ", jelszo: " + password );
     }
+
+    public void registration(View view) {
+        Intent intent = new Intent(this, RegistrationActivity.class);
+
+    }
 }
