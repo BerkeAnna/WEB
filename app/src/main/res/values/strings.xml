@@ -4,8 +4,14 @@
     <string name="login">login</string>
     <string name="password">password</string>
     <string name="username">username</string>
-    <string name="registration">registration</string>
-    <string name="register_rrr">Registration</string>
-    <string name="username_reg">username_reg</string>
-    <string name="name_reg">Name_reg</string>
+    <string name="registration">sign up</string>
+    <string name="register_rrr">Sign up</string>
+    <string name="username_reg">username</string>
+    <string name="firstname">firstname</string>
+    <string name="lastname">lastname</string>
+    <string name="passwordAgain">password again</string>
+    <string name="email">email</string>
+    <string name="sign_up">Sign up</string>
+    <string name="name">name</string>
+    <string name="email_address">email_address</string>
 </resources>
