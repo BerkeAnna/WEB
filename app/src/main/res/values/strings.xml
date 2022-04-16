@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">WEBSHOP</string>
+    <string name="register">register</string>
+    <string name="login">login</string>
+    <string name="password">password</string>
+    <string name="username">username</string>
+</resources>
