@@ -15,39 +15,38 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="2dp"
-        android:layout_marginEnd="-2dp"
-        android:layout_marginBottom="260dp"
+        android:layout_marginStart="@dimen/nullamargin"
+        android:layout_marginEnd="@dimen/nullamargin"
+        android:layout_marginBottom="564dp"
         android:text="@string/register_rrr"
         android:textAlignment="center"
         android:textSize="25sp" />
 
     <EditText
         android:id="@+id/usernameEdittext"
-        android:layout_width="400dp"
-        android:layout_height="40dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="225dp"
-        android:ems="10"
-        android:hint="@string/username"
-        android:inputType="textPersonName"
-        android:minHeight="48dp" />
-
-
-    <EditText
-        android:id="@+id/nameEdittext"
-        android:layout_width="400dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/textwidth"
+        android:layout_height="@dimen/textheight"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="@dimen/twentymargin"
         android:layout_marginEnd="@dimen/twentymargin"
-        android:layout_marginBottom="194dp"
+        android:layout_marginBottom="500dp"
+        android:ems="10"
+        android:hint="@string/username"
+        android:inputType="textPersonName"
+        android:minHeight="48dp" />
+
+    <EditText
+        android:id="@+id/nameEdittext"
+        android:layout_width="@dimen/textwidth"
+        android:layout_height="@dimen/textheight"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/twentymargin"
+        android:layout_marginEnd="@dimen/twentymargin"
+        android:layout_marginBottom="450dp"
         android:ems="10"
         android:hint="@string/name"
         android:inputType="textPersonName"
@@ -56,25 +55,34 @@
 
     <EditText
         android:id="@+id/passwordTextPassword"
-        android:layout_width="400dp"
-        android:layout_height="40dp"
+        android:layout_width="@dimen/textwidth"
+        android:layout_height="@dimen/textheight"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="128dp"
+        android:layout_marginStart="@dimen/twentymargin"
+        android:layout_marginEnd="@dimen/twentymargin"
+        android:layout_marginBottom="350dp"
         android:ems="10"
         android:hint="@string/password"
         android:inputType="textPassword" />
 
-    <LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    android:layout_marginTop="280dp"
-    android:layout_centerHorizontal="true"
-    >
+    <EditText
+        android:id="@+id/editTextEmail"
+        android:layout_width="@dimen/textwidth"
+        android:layout_height="@dimen/textheight"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/twentymargin"
+        android:layout_marginEnd="@dimen/twentymargin"
+        android:layout_marginBottom="400dp"
+        android:ems="10"
+
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        />
+
 
         <Button
             android:id="@+id/signup_button"
@@ -82,9 +90,11 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginEnd="30dp"
-            android:layout_marginBottom="44dp"
-            android:text="@string/sign_up" />
+            android:layout_marginEnd="158dp"
+            android:layout_marginBottom="205dp"
+            android:onClick="signup"
+            android:text="@string/sign_up"
+            />
 
         <Button
         android:id="@+id/cancel_button"
@@ -92,25 +102,10 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="44dp"
-        android:text="@string/cancel" />
-
-</LinearLayout>
-
-    <EditText
-        android:id="@+id/editextEmailAddress"
-        android:layout_width="400dp"
-        android:layout_height="40dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="158dp"
         android:layout_marginBottom="160dp"
-        android:ems="10"
-        android:hint="@string/email"
-        android:inputType="textEmailAddress" />
+        android:onClick="cancel"
+        android:text="@string/cancel" />
 
 
 </RelativeLayout>
