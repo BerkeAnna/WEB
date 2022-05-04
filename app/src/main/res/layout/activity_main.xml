@@ -36,10 +36,10 @@
 
     <Button
         android:id="@+id/login_button"
-        android:layout_width="160dp"
+        android:layout_width="300dp"
         android:layout_height="60dp"
-        android:text="@string/login"
         android:onClick="bej"
+        android:text="@string/login"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -48,7 +48,7 @@
 
     <Button
         android:id="@+id/registration_button"
-        android:layout_width="160dp"
+        android:layout_width="300dp"
         android:layout_height="60dp"
         android:onClick="registration"
         android:text="@string/registration"
@@ -59,6 +59,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.642" />
+
+    <Button
+        android:id="@+id/anonym_button"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:onClick="loginAsGuest"
+        android:text="@string/LoginAnonim"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.791" />
 
     <!--    <Button-->
 <!--        android:id="@+id/register_button"-->
