@@ -40,7 +40,7 @@ public class ShoppingItemAdapter extends RecyclerView.Adapter<ShoppingItemAdapte
    }
 
     @Override
-    public ViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
+    public ShoppingItemAdapter.ViewHolder onCreateViewHolder( ViewGroup parent, int viewType) {
         return new ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.list_item, parent, false));
     }
 

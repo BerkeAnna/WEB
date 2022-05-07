@@ -14,6 +14,7 @@ public class RandomAsyncTask extends AsyncTask<Void, Void, String> {
         mTextView= new WeakReference<>(textView);
     }
 
+
     @Override
     protected String doInBackground(Void... voids) {
         Random random = new Random();

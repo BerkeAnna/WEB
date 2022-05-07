@@ -5,7 +5,7 @@ public class ShoppingItem {
     private String info;
     private String price;
     private float ratedInfo;
-    private final int imageResource;
+    private int imageResource;
 
 
     public ShoppingItem(String name, String info, String price, float ratedInfo, int imageResource) {
@@ -16,7 +16,10 @@ public class ShoppingItem {
         this.imageResource = imageResource;
     }
 
-//    adatbázis setter -GUI III. 11.perc
+    public ShoppingItem() {
+    }
+
+    //    adatbázis setter -GUI III. 11.perc
     public String getName() { return name; }
     public String getInfo() { return info; }
     public String getPrice() { return price; }

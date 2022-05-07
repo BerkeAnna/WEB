@@ -15,8 +15,14 @@ import android.widget.FrameLayout;
 import android.widget.SearchView;
 import android.widget.TextView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
@@ -26,8 +32,15 @@ public class ShopListActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     private RecyclerView mRecyclerView;
-    private ArrayList<ShoppingItem> mItemlist;
+    private ArrayList<ShoppingItem> mItemsData;
     private ShoppingItemAdapter madapter;
+
+    private FirebaseFirestore mFirestore;
+    private CollectionReference mItems;
+
+
+
+
     private boolean viewRow = true;
     private FrameLayout redCircle ;
     private TextView contentTextView;
@@ -49,13 +62,37 @@ public class ShopListActivity extends AppCompatActivity {
 
         mRecyclerView = findViewById(R.id.recyclerview);
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, gridNumber));
-        mItemlist = new ArrayList<>();
+        mItemsData = new ArrayList<>();
 
-        madapter = new ShoppingItemAdapter(this, mItemlist);
+        madapter = new ShoppingItemAdapter(this, mItemsData);
 
         mRecyclerView.setAdapter(madapter);
 
-        intializeData();
+        mFirestore = FirebaseFirestore.getInstance();
+        mItems = mFirestore.collection("Items");
+
+        //githaub 97-126sor
+
+        queryData();
+
+    }
+
+    private void queryData(){
+        mItemsData.clear();
+
+        mItems.orderBy("name").limit(10).get().addOnSuccessListener(queryDocumentSnapshots -> {
+            for(QueryDocumentSnapshot document : queryDocumentSnapshots){
+                ShoppingItem item = document.toObject(ShoppingItem.class);
+                mItemsData.add(item);
+            }
+            if(mItemsData.size() == 0) {
+                intializeData();
+                queryData();
+            }
+            madapter.notifyDataSetChanged();
+        });
+
+
     }
 
     private void intializeData() {
@@ -65,12 +102,17 @@ public class ShopListActivity extends AppCompatActivity {
         TypedArray itemsImageResource = getResources().obtainTypedArray(R.array.shopping_item_images);
         TypedArray itemsRating = getResources().obtainTypedArray(R.array.shopping_item_rates);
 
-        mItemlist.clear();
+//        mItemsData.clear();
         for(int i=0 ; i<itemList.length; i++){
-            mItemlist.add(new ShoppingItem(itemList[i], itemInfo[i], itemPrice[i], itemsRating.getFloat(i,0), itemsImageResource.getResourceId(i, 0)));
+            mItemsData.add(new ShoppingItem(
+                    itemList[i],
+                    itemInfo[i],
+                    itemPrice[i],
+                    itemsRating.getFloat(i,0),
+                    itemsImageResource.getResourceId(i, 0)));
         }
         itemsImageResource.recycle();
-        madapter.notifyDataSetChanged();
+//        madapter.notifyDataSetChanged();
     }
 
     @Override
@@ -92,7 +134,7 @@ public class ShopListActivity extends AppCompatActivity {
                 return false;
             }
         });
-        
+
         return true;
     }
 
@@ -112,17 +154,17 @@ public class ShopListActivity extends AppCompatActivity {
                 return true;
             case R.id.view_selector:
                 Log.d(LOG_TAG, "View selector clicked");
-                
+
                 if(viewRow){
                     changeSpanCount(item, R.drawable.ic_view, 1);
                 }else{
                     changeSpanCount(item, R.drawable.view_row, 2);
-                    
+
                 }
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
-                        
+
         }
 
     }
@@ -150,7 +192,7 @@ public class ShopListActivity extends AppCompatActivity {
         });
 
         return super.onCreateOptionsMenu(menu);
-        
+
     }
     public void updateAlertIcon(){
         cartItems = (cartItems+1);

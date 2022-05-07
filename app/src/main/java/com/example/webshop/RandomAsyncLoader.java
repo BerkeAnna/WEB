@@ -8,6 +8,7 @@ import androidx.loader.content.AsyncTaskLoader;
 
 import java.util.Random;
 
+
 public class RandomAsyncLoader  extends AsyncTaskLoader<String> {
 
     public RandomAsyncLoader(@NonNull Context context) {
