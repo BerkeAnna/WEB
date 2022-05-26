@@ -1,0 +1,1 @@
+a:6:{s:8:"username";s:7:"adam123";s:8:"password";s:8:"adamadam";s:5:"email";s:24:"losonci.adam20@gmail.com";s:11:"telefonszam";s:11:"06201234567";s:9:"birthdate";s:10:"2021-05-12";s:3:"kep";s:11:"adam123.png";}

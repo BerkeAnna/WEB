@@ -1,0 +1,249 @@
+
+body{
+    background: linear-gradient(180deg, powderblue, gray);
+    background-attachment: fixed;
+    margin-top: 0;
+    color: black;
+}
+header {
+    background-color: black;
+    border-radius: 0px 0px 25px 25px;
+    text-align: center;
+    position: center;
+    padding: 10px 16px;
+}
+
+nav{
+    position: sticky;
+    top: 25px;
+    z-index: 999;
+}
+nav ul{
+    list-style: none;
+    margin: 30px;
+    padding: 0;
+    text-align: center;
+    align-content: center;
+    align-items: center;
+
+}
+
+
+nav li {
+    display: inline-block;
+    list-style-type: none;
+    padding: 5px 5px;
+    background-color: black;
+}
+nav li:hover{
+    background-color: whitesmoke;
+    cursor: pointer;
+
+}
+nav li:hover a{
+    color: black;
+}
+
+nav a{
+    padding: 20px;
+    text-align: center;
+    /*background-color: none;*/
+    font-weight:bold;
+    font-size: 20px;
+    color: whitesmoke;
+    text-transform: capitalize;
+
+}
+
+
+.aktiv{
+    display: inline-block;
+    list-style-type: none;
+    padding: 5px 5px;
+    background-color: darkgrey;
+}
+.aktiv a{
+    color: black;
+}
+main{
+    background-color: darkgray;
+    width: 80%;
+    margin: auto;
+    min-height: 650px;
+}
+.jatekimg {
+    width: 600px;
+    height: 400px;
+}
+
+#border {
+   border-width: 30px;
+    border-style: solid;
+}
+
+
+footer{
+    background-color: black;
+    width: 80%;
+    margin: auto;
+    height: 300px;
+
+}
+em{
+    color: whitesmoke;
+}
+
+input, select, textarea, fildset {margin-bottom: 10px}
+
+input[type="submit"]{
+    background-color: powderblue;
+    color: black;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    width: 200px;
+    height: 45px;
+}
+input[type="reset"]{
+    background-color: powderblue;
+    color: black;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    width: 150px;
+    height: 45px;
+}
+div.kozepre{
+    text-align: center;
+}
+div.jobbra{
+    text-align: right;
+}
+div.kotelezo{
+    color: darkred;
+    font-weight: bold;
+}
+h1{
+    text-align: center;
+    text-transform: uppercase;
+    color: whitesmoke;
+}
+
+h2 {
+    color: #175A75;
+    font-size: 35px;
+}
+#hely {
+    text-align: center;
+    text-decoration: underline;
+}
+
+#forma {
+    line-height: 75px;
+    font-size: 30px;
+    letter-spacing: 5px;
+    white-space: pre-line;
+
+}
+
+.paragraph { text-shadow: 2px 4px 5px whitesmoke;}
+
+.box{border: 3px solid black; box-shadow: 3px 5px darkblue}
+
+mark{
+    background-color: whitesmoke;
+}
+
+.harmasoszlop{
+    column-count: 3;
+    column-rule-style: dotted;
+    column-rule-width: 4px;
+    column-rule-color: darkblue;
+}
+table{
+    border: 2px solid darkblue;
+    border-collapse: collapse;
+    width: 50%;
+    height: auto;
+    margin: auto;
+
+
+}
+th, td{
+    border: 2px solid darkblue;
+    text-align: center;
+    width: 50%;
+    padding: 1px;
+}
+th{
+    background-color: royalblue;
+    color: white;
+}
+
+aside{
+    width: 40%;
+    padding: 2px;
+    margin: 2px;
+    float: right;
+    background-color: lightgrey;
+
+}
+iframe{
+    float: left;
+    margin: 2px;
+    padding: 2px;
+}
+
+
+div.dolt{
+    font-weight: bold;
+}
+
+
+  p::selection{background-color: royalblue;}
+  p::first-letter{font-size: 130%; color: whitesmoke;}
+
+  @keyframes animaciok {
+      0% {
+          background-color: #000;    }
+      50% {
+          background-image: url("https://www.google.com/search?q=gamer+rajz&source=lnms&tbm=isch&sa=X&ved=2ahUKEwiD3cPEhsDvAhWi-ioKHT5rCr0Q_AUoAXoECAwQAw&biw=1366&bih=625#imgrc=ebrAMaSXx_vb5M");
+      }
+  }
+
+#animacio{
+    width: 100%;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation-name: animaciok;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+
+
+}
+#profil{
+    padding-top: 50px;
+    width: 500px;
+    margin: auto;
+    text-align: center;
+}
+#profil p{
+    font-size: 50px;
+}
+
+#bejelentkezes{
+    width: 250px;
+    margin: auto;
+    text-align: center;
+    font-size: 15pt;
+}
+
+
+@media print{
+    p {font-size: 12pt;}
+    h1, h2, h3 {page-break-after: avoid;}
+}
+@page {
+    margin: 1cm;
+}
